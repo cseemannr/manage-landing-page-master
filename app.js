@@ -3,19 +3,12 @@ const mobileBtnOpen = document.querySelector(".mobile-nav-icon-open");
 const mobileBtnClose = document.querySelector(".mobile-nav-icon-close");
 const navMenu = document.querySelector(".nav-menu");
 const navMenuBg = document.querySelector(".nav-menu-bg");
-
 const emailInput = document.querySelector('input[type="email"]');
 const inputMsg = document.querySelector(".input-msg");
-
 const testimonials = document.querySelectorAll(".testimonial");
 const sliders = document.querySelectorAll(".testimonial-slider");
 
-const testimonialsContainer = document.querySelector(".testimonial-container");
-
 //mobile menu
-console.log(testimonials);
-console.log(sliders);
-console.log(mobileToggle);
 
 mobileToggle.addEventListener("click", function () {
   mobileBtnClose.classList.toggle("active");
@@ -27,13 +20,20 @@ mobileToggle.addEventListener("click", function () {
 
 // auto slider
 
-function changeTestimonial() {
-  testimonialsContainer.sty;
-}
+let counter = 1;
+setInterval(() => {
+  for (let j = 0; j < sliders.length; j++) {
+    testimonials[j].classList.remove("active");
+    sliders[j].classList.remove("active");
+  }
+  testimonials[counter].classList.add("active");
+  sliders[counter].classList.add("active");
+  counter++;
 
-setInterval(changeTestimonial, 5000);
+  if (counter >= sliders.length) counter = 0;
+}, 5000);
 
-// slider mobile
+// slider dot
 for (let i = 0; i < sliders.length; i++) {
   sliders[i].addEventListener("click", function () {
     for (let j = 0; j < sliders.length; j++) {
