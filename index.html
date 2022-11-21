@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -13,6 +12,17 @@
     />
 
     <title>Frontend Mentor | Manage landing page</title>
+    <!--a11y-->
+    >
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/a11y-slider@latest/dist/a11y-slider.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"
+    ></script>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script defer src="app.js"></script>
   </head>
   <body>
     <div class="nav-menu-bg"></div>
@@ -57,11 +68,12 @@
           <li class="nav-menu-link"><a href="#">Community</a></li>
         </ul>
       </div>
+
       <a class="btn btn-accent nav-btn" href="#">Get Started</a>
 
       <div class="mobile-nav-icons">
         <svg
-          class="mobile-nav-icon-open"
+          class="mobile-nav-icon-open active"
           xmlns="http://www.w3.org/2000/svg"
           width="25"
           height="18"
@@ -215,7 +227,7 @@
 
     <footer>
       <div class="footer-grid container">
-        <div class="email-input">
+        <form class="email-input">
           <input
             class="btn"
             type="email"
@@ -224,8 +236,8 @@
             placeholder="Updates in your inbox…"
           />
           <input class="btn btn-accent" type="submit" value="Go" />
-          <p class="input-msg"><em>input message</em></p>
-        </div>
+          <p class="input-msg"></p>
+        </form>
 
         <div class="footer-links">
           <div>
